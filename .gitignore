@@ -2,3 +2,6 @@ vendor/*
 PhpSpreadsheet/vendor/*
 sdk2/timbrados/*
 sdk2/tmp/*
+temporal.Php
+temporaldos.js
+temporal.js
