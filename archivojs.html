@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1> Hola esta es una prueba para descargar un archivo con js </h1>
+    <button onclick="crearAcuse()"> crear archivo </button>
+</body>
+
+<script>
+    function crearAcuse() {
+        let cadena = 'PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48QWN1c2UgeG1sbnM6eHNkPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYSIgeG1sbnM6eHNpPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYS1pbnN0YW5jZSIgRmVjaGE9IjIwMjEtMDItMTJUMTQ6MDQ6MTIuNTA1NjA3MSIgUmZjRW1pc29yPSJBQUEwMTAxMDFBQUEiPjxGb2xpb3MgeG1sbnM9Imh0dHA6Ly9jYW5jZWxhY2ZkLnNhdC5nb2IubXgiPjxVVUlEPkRFQzM3MzEwLTgwRTktNDc4My05MkYwLTlBRTU3OTdDRjcwMjwvVVVJRD48RXN0YXR1c1VVSUQ+MjAxPC9Fc3RhdHVzVVVJRD48L0ZvbGlvcz48U2lnbmF0dXJlIElkPSJTZWxsb1NBVCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvMDkveG1sZHNpZyMiPjxTaWduZWRJbmZvPjxDYW5vbmljYWxpemF0aW9uTWV0aG9kIEFsZ29yaXRobT0iaHR0cDovL3d3dy53My5vcmcvVFIvMjAwMS9SRUMteG1sLWMxNG4tMjAwMTAzMTUiIC8+PFNpZ25hdHVyZU1ldGhvZCBBbGdvcml0aG09Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvMDQveG1sZHNpZy1tb3JlI2htYWMtc2hhNTEyIiAvPjxSZWZlcmVuY2UgVVJJPSIiPjxUcmFuc2Zvcm1zPjxUcmFuc2Zvcm0gQWxnb3JpdGhtPSJodHRwOi8vd3d3LnczLm9yZy9UUi8xOTk5L1JFQy14cGF0aC0xOTk5MTExNiI+PFhQYXRoPm5vdChhbmNlc3Rvci1vci1zZWxmOjoqW2xvY2FsLW5hbWUoKT0nU2lnbmF0dXJlJ10pPC9YUGF0aD48L1RyYW5zZm9ybT48L1RyYW5zZm9ybXM+PERpZ2VzdE1ldGhvZCBBbGdvcml0aG09Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvMDQveG1sZW5jI3NoYTUxMiIgLz48RGlnZXN0VmFsdWU+Q1JrRHlPUFo0T3crSmxtRk9pME9KUVNwT1M4S2toVFl2ejR4MUl0Sm50T2w4UmtUK1AyUXowaDdkbi96NytHdDF2M2JQNkFPNkpCRk9sT3l2aDBrNFE9PTwvRGlnZXN0VmFsdWU+PC9SZWZlcmVuY2U+PC9TaWduZWRJbmZvPjxTaWduYXR1cmVWYWx1ZT4xd3hPa1pLdDFacE0zcEJhdHhsVXBPOFNwNlA0QUxaWXVkZ2w3RGEyNmtEVlR0dmtSMVJjR0RwNTFrSkNIWGZZSnA1d1lMSVRDTGlaQTBqcGM1VFhVdz09PC9TaWduYXR1cmVWYWx1ZT48S2V5SW5mbz48S2V5TmFtZT5CRjY2RTU4Mjg4OENDODQ1PC9LZXlOYW1lPjxLZXlWYWx1ZT48UlNBS2V5VmFsdWU+PE1vZHVsdXM+bjVZc0dUMHc1WjcwT05QYnFzemhFeGZKVStLWTNCc2NmdGMyanhVbjR3eHBTakVVaG5DdVRkODhPSzVRYkRXM011cG9jNjFqcjgzbFJoVUNqY2hGQW1DaWdwQzEwckVudFRmRVUrN3F0WDh1ZC9qSkpEQjFhOWxUSUI2YmhCTi8vWDhJUURqaG1IcmZLdmZlbjNwN1J4THJGb3h6V2dwd0tyaXVHSTV3VWxVPTwvTW9kdWx1cz48RXhwb25lbnQ+QVFBQjwvRXhwb25lbnQ+PC9SU0FLZXlWYWx1ZT48L0tleVZhbHVlPjwvS2V5SW5mbz48L1NpZ25hdHVyZT48L0FjdXNlPg==';
+        let xmltext = atob(cadena);
+
+        var pom = document.createElement('a');
+
+        var filename = "acuse.xml";
+        var pom = document.createElement('a');
+        var bb = new Blob([xmltext], {
+            type: 'text/plain'
+        });
+
+        pom.setAttribute('href', window.URL.createObjectURL(bb));
+        pom.setAttribute('download', filename);
+
+        pom.dataset.downloadurl = ['text/plain', pom.download, pom.href].join(':');
+        pom.draggable = true;
+        pom.classList.add('dragout');
+
+        pom.click();
+    }
+</script>
+
+</html>

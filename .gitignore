@@ -1,0 +1,4 @@
+vendor/*
+PhpSpreadsheet/vendor/*
+sdk2/timbrados/*
+sdk2/tmp/*
